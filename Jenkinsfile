@@ -8,7 +8,7 @@ pipeline {
         stage ('Build') {
           
             steps {
-                dir ('source/Hello-world-CICD-master') {
+                dir ('source') {
                     sh '''mvn -Dmaven.test.failure.ignore=true clean install
                           cp -R target/*.war ansible/hello-world.war'''
                 }
