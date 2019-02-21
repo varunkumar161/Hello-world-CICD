@@ -12,6 +12,7 @@ pipeline {
                     sh '''mvn -Dmaven.test.failure.ignore=true clean deploy
                           cp -R target/*.war ansible/hello-world.war'''
                     nexusArtifactUploader credentialsId: 'd9f4a378-5d45-422a-818f-71790e3bf508', groupId: 'org.reddy    ', nexusUrl: '18.222.122.26:8081/nexus/content/repositories/snapshots/', nexusVersion: 'nexus2', protocol: 'http', repository: 'snapshotRepository', version: '1.0.0-SNAPSHOT'
+                    archiveArtifacts '/target/*.war'
                 }
                 dir ('source/terraform/dev1') {
                     sh 'terraform init && terraform apply -auto-approve'
