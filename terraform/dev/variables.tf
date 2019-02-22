@@ -9,7 +9,7 @@ variable "environment" {
 
 #key pair name
 variable "key_name" {
-  default = "jenkins"
+  default = "ansible"
 }
 
 variable "ssh_user" {
