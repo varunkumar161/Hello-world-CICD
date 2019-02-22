@@ -13,7 +13,7 @@ variable "key_name" {
 }
 
 variable "ssh_user" {
-  default = "ubuntu"
+  default = "ec2-user"
 }
 
 variable "vpc_net_block" {
@@ -27,5 +27,5 @@ variable "instance_type_micro" {
 
 #Amazon Linux AMI
 variable "ami" {
-  default = "ami-0f65671a86f061fcd"
+  default = " ami-04328208f4f0cf1fe"
 }
