@@ -13,7 +13,7 @@ variable "key_name" {
 }
 
 variable "ssh_user" {
-  default = "ec2-user"
+  default = "ubuntu"
 }
 
 variable "vpc_net_block" {
