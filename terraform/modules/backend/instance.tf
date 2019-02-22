@@ -15,7 +15,7 @@ resource "aws_instance" "app" {
   }
 
   provisioner "local-exec" {
-    command = "sleep 120; ANSIBLE_HOST_KEY_CHECKING=False /usr/local/bin/ansible-playbook -u ${var.ssh_user} --private-key ~/.ssh/jenkins.pem -i '${self.private_ip},' '../../ansible/site.yml'"
+    command = "sleep 120; ANSIBLE_HOST_KEY_CHECKING=False /usr/local/bin/ansible-playbook -u ${var.ssh_user} --private-key ~/.ssh/ansible.pem -i '${self.private_ip},' '../../ansible/site.yml'"
   }
 
   tags {
