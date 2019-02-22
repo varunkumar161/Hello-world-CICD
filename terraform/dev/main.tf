@@ -1,6 +1,6 @@
 provider "aws" {
   region  = "${var.aws_region}"
-  profile = "profile"
+  profile = "default"
   version = "1.23.0"
 }
 
@@ -10,6 +10,8 @@ module "vpc" {
   vpc_net_block = "${var.vpc_net_block}"
   environment   = "${var.environment}"
 }
+
+
 
 provider "null" {
   version = "1.0"
