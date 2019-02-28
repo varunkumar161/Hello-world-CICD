@@ -14,7 +14,7 @@ pipeline {
                    
                 }
                  dir ('source') {
-                 nexusArtifactUploader artifacts: [[artifactId: 'hello-world', classifier: '', file: 'target/hello-world-1.0.0-SNAPSHOT.war', type: '.war']], credentialsId: 'c9a61db1-febc-4dda-9375-0bfef23c3bb7', groupId: 'varun.org', nexusUrl: '13.59.22.69:8081/nexus/content/repositories/snapshots', nexusVersion: 'nexus2', protocol: 'http', repository: 'sanpshot', version: '1.0'
+                 nexusArtifactUploader artifacts: [[artifactId: 'hello-world', classifier: '', file: 'target/*.war', type: '.war']], credentialsId: 'd9f4a378-5d45-422a-818f-71790e3bf508', groupId: 'org.varun', nexusUrl: '13.59.22.69:8080/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'snapshot', version: '1.0'
                  }
                 dir ('source/terraform/dev') {
                     sh 'terraform init && terraform apply -auto-approve'
